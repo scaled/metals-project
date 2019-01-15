@@ -9,4 +9,4 @@ available at http://github.com/scaled/metals-project
 
 [Scaled]: https://github.com/scaled/scaled
 [Metals]: https://scalameta.org/metals/
-[LSP]: https://langserver.org/
+[LSP]: https://microsoft.github.io/language-server-protocol/
