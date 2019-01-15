@@ -1,0 +1,8 @@
+   name: metals-project
+ source: git:https://github.com/scaled/metals-project.git
+version: 1.0
+descrip: Integrates Metals LSP server into Scaled.
+ weburl: https://github.com/scaled/metals-project
+license: New BSD
+ depend: git:https://github.com/scaled/project-service.git
+ depend: mvn:org.scalameta:metals_2.12:0.3.3
