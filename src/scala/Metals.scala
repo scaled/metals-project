@@ -10,11 +10,10 @@ import scaled.pacman.JDK
 
 object Metals {
 
-  // TODO: also support bloop? whatever that is...
-  val ProjectFile = "build.sbt"
+  val ProjectFile = ".bloop"
 
   @Plugin(tag="project-root")
-  class MetalsRootPlugin extends RootPlugin.File(ProjectFile)
+  class MetalsRootPlugin extends RootPlugin.Directory(ProjectFile)
 
   @Plugin(tag="langserver")
   class MetalsLangPlugin extends LangPlugin {
