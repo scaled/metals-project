@@ -33,10 +33,8 @@ object Metals {
     val pkgCP = pkgSvc.classpath(pkgSource).mkString(System.getProperty("path.separator"))
     val langMain = "scala.meta.metals.Main"
 
-    // find a Java 8 VM, as Metals doesn't work with anything newer
-    val projJdk = JDK.jdks.find(_.majorVersion.equals("8")) getOrElse JDK.thisJDK
-    val java = projJdk.home.resolve("bin").resolve("java").toString
-    Seq(java, "-Dmetals.http=on", "-classpath", pkgCP, langMain)
+    val projJdk = JDK.jdks.find(jdk => Files.exists(jdk.binJava)) getOrElse JDK.thisJDK
+    Seq(projJdk.binJava.toString, "-classpath", pkgCP, langMain)
   }
 }
 
